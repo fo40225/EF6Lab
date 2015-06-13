@@ -56,6 +56,9 @@
     <Compile Include="Course.cs">
       <DependentUpon>SchoolModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Department.cs">
+      <DependentUpon>SchoolModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="OnlineCourse.cs">
       <DependentUpon>SchoolModel.tt</DependentUpon>
     </Compile>

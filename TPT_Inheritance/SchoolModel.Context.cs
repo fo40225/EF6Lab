@@ -26,5 +26,6 @@ namespace TPT_Inheritance
         }
     
         public virtual DbSet<Course> Courses { get; set; }
+        public virtual DbSet<Department> Departments { get; set; }
     }
 }

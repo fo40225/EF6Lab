@@ -12,13 +12,19 @@ namespace TPT_Inheritance
     using System;
     using System.Collections.Generic;
     
-    public partial class Course
+    public partial class Department
     {
-        public int CourseID { get; set; }
-        public string Title { get; set; }
-        public int Credits { get; set; }
-        public int DepartmentID { get; set; }
+        public Department()
+        {
+            this.Courses = new HashSet<Course>();
+        }
     
-        public virtual Department Department { get; set; }
+        public int DepartmentID { get; set; }
+        public string Name { get; set; }
+        public decimal Budget { get; set; }
+        public System.DateTime StartDate { get; set; }
+        public Nullable<int> Administrator { get; set; }
+    
+        public virtual ICollection<Course> Courses { get; set; }
     }
 }
