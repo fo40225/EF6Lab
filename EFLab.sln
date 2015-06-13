@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPH_Inheritance", "TPH_Inhe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoredProcedures", "StoredProcedures\StoredProcedures.csproj", "{FD16758A-200E-47AC-A3E2-50D6E36635C0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntitySplitting", "EntitySplitting\EntitySplitting.csproj", "{07E6F7BF-F9AD-42F8-96E7-FDE71821E1D7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,10 @@ Global
 		{FD16758A-200E-47AC-A3E2-50D6E36635C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD16758A-200E-47AC-A3E2-50D6E36635C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD16758A-200E-47AC-A3E2-50D6E36635C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07E6F7BF-F9AD-42F8-96E7-FDE71821E1D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07E6F7BF-F9AD-42F8-96E7-FDE71821E1D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07E6F7BF-F9AD-42F8-96E7-FDE71821E1D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07E6F7BF-F9AD-42F8-96E7-FDE71821E1D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
