@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 06/13/2015 17:44:54
+-- Date Created: 06/13/2015 17:54:03
 -- Generated from EDMX file: C:\Users\User\Source\Repos\EFLab\ModelFirst\BlogModel.edmx
 -- --------------------------------------------------
 
@@ -17,11 +17,20 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_BlogPost]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[PostSet] DROP CONSTRAINT [FK_BlogPost];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[BlogSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[BlogSet];
+GO
+IF OBJECT_ID(N'[dbo].[PostSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[PostSet];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -44,6 +53,13 @@ CREATE TABLE [dbo].[PostSet] (
 );
 GO
 
+-- Creating table 'UserSet'
+CREATE TABLE [dbo].[UserSet] (
+    [UserName] nvarchar(50)  NOT NULL,
+    [DisplayName] nvarchar(max)  NOT NULL
+);
+GO
+
 -- --------------------------------------------------
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
@@ -58,6 +74,12 @@ GO
 ALTER TABLE [dbo].[PostSet]
 ADD CONSTRAINT [PK_PostSet]
     PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [UserName] in table 'UserSet'
+ALTER TABLE [dbo].[UserSet]
+ADD CONSTRAINT [PK_UserSet]
+    PRIMARY KEY CLUSTERED ([UserName] ASC);
 GO
 
 -- --------------------------------------------------

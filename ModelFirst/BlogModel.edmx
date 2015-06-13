@@ -8,6 +8,7 @@
   <EntityContainer Name="BlogModelStoreContainer">
     <EntitySet Name="BlogSet" EntityType="BlogModel.Store.BlogSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="PostSet" EntityType="BlogModel.Store.PostSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserSet" EntityType="BlogModel.Store.UserSet" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="BlogPost" Association="BlogModel.Store.BlogPost">
       <End Role="Blog" EntitySet="BlogSet" />
       <End Role="Post" EntitySet="PostSet" />
@@ -29,6 +30,13 @@
     <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Content" Type="nvarchar(max)" Nullable="false" />
     <Property Name="BlogId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserSet">
+    <Key>
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="DisplayName" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <Association Name="BlogPost">
     <End Role="Blog" Type="BlogModel.Store.BlogSet" Multiplicity="1" />
@@ -115,6 +123,14 @@
           <ScalarProperty Name="Title" ColumnName="Title" />
           <ScalarProperty Name="Content" ColumnName="Content" />
           <ScalarProperty Name="BlogId" ColumnName="BlogId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserSet">
+      <EntityTypeMapping TypeName="IsTypeOf(BlogModel.User)">
+        <MappingFragment StoreEntitySet="UserSet">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
