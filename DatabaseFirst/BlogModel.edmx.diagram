@@ -8,6 +8,7 @@
         <EntityTypeShape EntityType="DatabaseFirst.BloggingModel.Blog" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="DatabaseFirst.BloggingModel.Post" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
         <AssociationConnector Association="DatabaseFirst.BloggingModel.FK_dbo_Posts_dbo_Blogs_BlogId" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DatabaseFirst.BloggingModel.User" Width="1.5" PointX="0.75" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
