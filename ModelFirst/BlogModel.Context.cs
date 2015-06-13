@@ -27,5 +27,6 @@ namespace ModelFirst
     
         public virtual DbSet<Blog> BlogSet { get; set; }
         public virtual DbSet<Post> PostSet { get; set; }
+        public virtual DbSet<User> UserSet { get; set; }
     }
 }
