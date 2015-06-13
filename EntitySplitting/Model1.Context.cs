@@ -26,6 +26,5 @@ namespace EntitySplitting
         }
     
         public virtual DbSet<Person> People { get; set; }
-        public virtual DbSet<PersonInfo> PersonInfoes { get; set; }
     }
 }

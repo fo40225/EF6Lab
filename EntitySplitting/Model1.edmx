@@ -55,38 +55,11 @@
           <Property Name="PersonId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="FirstName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="LastName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="PersonInfo" Relationship="Self.FK_Person_PersonInfo" FromRole="Person" ToRole="PersonInfo" />
-        </EntityType>
-        <EntityType Name="PersonInfo">
-          <Key>
-            <PropertyRef Name="PersonId" />
-          </Key>
-          <Property Name="PersonId" Type="Int32" Nullable="false" />
           <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Person" Relationship="Self.FK_Person_PersonInfo" FromRole="PersonInfo" ToRole="Person" />
         </EntityType>
-        <Association Name="FK_Person_PersonInfo">
-          <End Role="Person" Type="Self.Person" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="PersonInfo" Type="Self.PersonInfo" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="Person">
-              <PropertyRef Name="PersonId" />
-            </Principal>
-            <Dependent Role="PersonInfo">
-              <PropertyRef Name="PersonId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="EntitySplittingEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="People" EntityType="Self.Person" />
-          <EntitySet Name="PersonInfoes" EntityType="Self.PersonInfo" />
-          <AssociationSet Name="FK_Person_PersonInfo" Association="Self.FK_Person_PersonInfo">
-            <End Role="Person" EntitySet="People" />
-            <End Role="PersonInfo" EntitySet="PersonInfoes" />
-          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -101,14 +74,10 @@
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
               </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="PersonInfoes">
-            <EntityTypeMapping TypeName="EntitySplittingModel.PersonInfo">
               <MappingFragment StoreEntitySet="PersonInfo">
-                <ScalarProperty Name="PersonId" ColumnName="PersonId" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="PersonId" ColumnName="PersonId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
