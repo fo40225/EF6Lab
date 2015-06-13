@@ -12,10 +12,8 @@ namespace TPH_Inheritance
     using System;
     using System.Collections.Generic;
     
-    public partial class Person
+    public partial class Instructor : Person
     {
-        public int PersonID { get; set; }
-        public string LastName { get; set; }
-        public string FirstName { get; set; }
+        public Nullable<System.DateTime> HireDate { get; set; }
     }
 }

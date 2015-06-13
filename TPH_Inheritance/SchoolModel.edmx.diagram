@@ -5,7 +5,11 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="a97629ec4b0742ac8b8ba89bc69e27a2" Name="Diagram1">
-        <EntityTypeShape EntityType="SchoolModel.Person" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolModel.Person" Width="1.5" PointX="2.125" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolModel.Instructor" Width="1.5" PointX="1" PointY="3.125" />
+        <InheritanceConnector EntityType="SchoolModel.Instructor" />
+        <EntityTypeShape EntityType="SchoolModel.Student" Width="1.5" PointX="3.25" PointY="3.125" />
+        <InheritanceConnector EntityType="SchoolModel.Student" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
