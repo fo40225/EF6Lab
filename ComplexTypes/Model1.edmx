@@ -21,11 +21,14 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" Nullable="false" />
-          <Property Name="Major" Type="String" Nullable="false" />
-          <Property Name="Minor" Type="String" Nullable="false" />
-          <Property Name="CL" Type="String" Nullable="false" />
-          <Property Name="BulidTime" Type="String" Nullable="false" />
+          <Property Name="Version" Type="Model1.Version" Nullable="false" />
         </EntityType>
+        <ComplexType Name="Version">
+          <Property Type="String" Name="Major" Nullable="false" />
+          <Property Type="String" Name="Minor" Nullable="false" />
+          <Property Type="String" Name="CL" Nullable="false" />
+          <Property Type="String" Name="BulidTime" Nullable="false" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
