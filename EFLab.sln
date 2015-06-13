@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseFirst", "DatabaseFi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComplexTypes", "ComplexTypes\ComplexTypes.csproj", "{335B03D1-E05A-44BE-8153-6A11380D9106}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Relationships", "Relationships\Relationships.csproj", "{CD66D6CD-AE78-46CC-8560-2B20B81FC9C3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{335B03D1-E05A-44BE-8153-6A11380D9106}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{335B03D1-E05A-44BE-8153-6A11380D9106}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{335B03D1-E05A-44BE-8153-6A11380D9106}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD66D6CD-AE78-46CC-8560-2B20B81FC9C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD66D6CD-AE78-46CC-8560-2B20B81FC9C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD66D6CD-AE78-46CC-8560-2B20B81FC9C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD66D6CD-AE78-46CC-8560-2B20B81FC9C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
