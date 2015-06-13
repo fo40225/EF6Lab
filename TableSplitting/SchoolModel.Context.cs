@@ -26,5 +26,6 @@ namespace TableSplitting
         }
     
         public virtual DbSet<Person> People { get; set; }
+        public virtual DbSet<HireInfo> HireInfoes { get; set; }
     }
 }

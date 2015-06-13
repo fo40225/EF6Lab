@@ -12,14 +12,11 @@ namespace TableSplitting
     using System;
     using System.Collections.Generic;
     
-    public partial class Person
+    public partial class HireInfo
     {
         public int PersonID { get; set; }
-        public string LastName { get; set; }
-        public string FirstName { get; set; }
-        public Nullable<System.DateTime> EnrollmentDate { get; set; }
-        public string Discriminator { get; set; }
+        public Nullable<System.DateTime> HireDate { get; set; }
     
-        public virtual HireInfo HireInfo { get; set; }
+        public virtual Person Person { get; set; }
     }
 }

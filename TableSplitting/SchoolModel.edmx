@@ -31,13 +31,38 @@
           <Property Name="PersonID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="HireDate" Type="DateTime" Precision="3" />
           <Property Name="EnrollmentDate" Type="DateTime" Precision="3" />
           <Property Name="Discriminator" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="HireInfo" Relationship="SchoolModel.PersonHireInfo" FromRole="Person" ToRole="HireInfo" />
         </EntityType>
         <EntityContainer Name="SchoolEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="People" EntityType="Self.Person" />
+          <EntitySet Name="HireInfoes" EntityType="SchoolModel.HireInfo" />
+          <AssociationSet Name="PersonHireInfo" Association="SchoolModel.PersonHireInfo">
+            <End Role="Person" EntitySet="People" />
+            <End Role="HireInfo" EntitySet="HireInfoes" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="HireInfo">
+          <Key>
+            <PropertyRef Name="PersonID" />
+          </Key>
+          <Property Name="PersonID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HireDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Person" Relationship="SchoolModel.PersonHireInfo" FromRole="HireInfo" ToRole="Person" />
+        </EntityType>
+        <Association Name="PersonHireInfo">
+          <End Type="SchoolModel.Person" Role="Person" Multiplicity="1" />
+          <End Type="SchoolModel.HireInfo" Role="HireInfo" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonID" />
+            </Principal>
+            <Dependent Role="HireInfo">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -50,9 +75,16 @@
                 <ScalarProperty Name="PersonID" ColumnName="PersonID" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="HireDate" ColumnName="HireDate" />
                 <ScalarProperty Name="EnrollmentDate" ColumnName="EnrollmentDate" />
                 <ScalarProperty Name="Discriminator" ColumnName="Discriminator" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HireInfoes">
+            <EntityTypeMapping TypeName="IsTypeOf(SchoolModel.HireInfo)">
+              <MappingFragment StoreEntitySet="Person">
+                <ScalarProperty Name="HireDate" ColumnName="HireDate" />
+                <ScalarProperty Name="PersonID" ColumnName="PersonID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
