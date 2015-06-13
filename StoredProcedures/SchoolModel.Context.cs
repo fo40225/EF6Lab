@@ -66,7 +66,7 @@ namespace StoredProcedures
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<StudentGrade>("GetStudentGrades", mergeOption, studentIDParameter);
         }
     
-        public virtual ObjectResult<Nullable<decimal>> InsertPerson(string lastName, string firstName, Nullable<System.DateTime> hireDate, Nullable<System.DateTime> enrollmentDate, string discriminator)
+        public virtual ObjectResult<Nullable<int>> InsertPerson(string lastName, string firstName, Nullable<System.DateTime> hireDate, Nullable<System.DateTime> enrollmentDate, string discriminator)
         {
             var lastNameParameter = lastName != null ?
                 new ObjectParameter("LastName", lastName) :
@@ -88,7 +88,7 @@ namespace StoredProcedures
                 new ObjectParameter("Discriminator", discriminator) :
                 new ObjectParameter("Discriminator", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<decimal>>("InsertPerson", lastNameParameter, firstNameParameter, hireDateParameter, enrollmentDateParameter, discriminatorParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("InsertPerson", lastNameParameter, firstNameParameter, hireDateParameter, enrollmentDateParameter, discriminatorParameter);
         }
     
         public virtual int UpdatePerson(Nullable<int> personID, string lastName, string firstName, Nullable<System.DateTime> hireDate, Nullable<System.DateTime> enrollmentDate, string discriminator)

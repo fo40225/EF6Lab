@@ -126,7 +126,7 @@
           <FunctionImport Name="GetStudentGrades" EntitySet="StudentGrades" ReturnType="Collection(SchoolModel.StudentGrade)">
             <Parameter Name="StudentID" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="InsertPerson" ReturnType="Collection(Decimal)">
+          <FunctionImport Name="InsertPerson" ReturnType="Collection(Int32)">
             <Parameter Name="LastName" Mode="In" Type="String" />
             <Parameter Name="FirstName" Mode="In" Type="String" />
             <Parameter Name="HireDate" Mode="In" Type="DateTime" />
