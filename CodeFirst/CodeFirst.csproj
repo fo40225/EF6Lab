@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="Blog.cs" />
     <Compile Include="BloggingContext.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Post.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
