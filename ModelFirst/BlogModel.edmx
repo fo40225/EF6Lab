@@ -13,7 +13,44 @@
     <edmx:ConceptualModels>
       <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="BlogModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
         <EntityContainer Name="BlogModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BlogSet" EntityType="BlogModel.Blog" />
+          <EntitySet Name="PostSet" EntityType="BlogModel.Post" />
+          <AssociationSet Name="BlogPost" Association="BlogModel.BlogPost">
+            <End Role="Blog" EntitySet="BlogSet" />
+            <End Role="Post" EntitySet="PostSet" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Blog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="Url" Type="String" Nullable="true" />
+          <NavigationProperty Name="Post" Relationship="BlogModel.BlogPost" FromRole="Blog" ToRole="Post" />
+        </EntityType>
+        <EntityType Name="Post">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" />
+          <Property Name="Content" Type="String" Nullable="false" />
+          <NavigationProperty Name="Blog" Relationship="BlogModel.BlogPost" FromRole="Post" ToRole="Blog" />
+          <Property Name="BlogId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="BlogPost">
+          <End Type="BlogModel.Blog" Role="Blog" Multiplicity="1" />
+          <End Type="BlogModel.Post" Role="Post" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Blog">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Post">
+              <PropertyRef Name="BlogId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
