@@ -123,7 +123,7 @@
             <Parameter Name="ID" Mode="In" Type="Int32" />
             <Parameter Name="Name" Mode="InOut" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="GetStudentGrades" ReturnType="Collection(SchoolModel.GetStudentGrades_Result)">
+          <FunctionImport Name="GetStudentGrades" EntitySet="StudentGrades" ReturnType="Collection(SchoolModel.StudentGrade)">
             <Parameter Name="StudentID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="InsertPerson" ReturnType="Collection(Decimal)">
@@ -179,14 +179,6 @@
           <FunctionImportMapping FunctionImportName="DeletePerson" FunctionName="SchoolModel.Store.DeletePerson" />
           <FunctionImportMapping FunctionImportName="GetDepartmentName" FunctionName="SchoolModel.Store.GetDepartmentName" />
           <FunctionImportMapping FunctionImportName="GetStudentGrades" FunctionName="SchoolModel.Store.GetStudentGrades">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="SchoolModel.GetStudentGrades_Result">
-                <ScalarProperty Name="EnrollmentID" ColumnName="EnrollmentID" />
-                <ScalarProperty Name="Grade" ColumnName="Grade" />
-                <ScalarProperty Name="CourseID" ColumnName="CourseID" />
-                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="InsertPerson" FunctionName="SchoolModel.Store.InsertPerson" />
           <FunctionImportMapping FunctionImportName="UpdatePerson" FunctionName="SchoolModel.Store.UpdatePerson" />

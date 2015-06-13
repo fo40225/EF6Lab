@@ -48,13 +48,22 @@ namespace StoredProcedures
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("GetDepartmentName", iDParameter, name);
         }
     
-        public virtual ObjectResult<GetStudentGrades_Result> GetStudentGrades(Nullable<int> studentID)
+        public virtual ObjectResult<StudentGrade> GetStudentGrades(Nullable<int> studentID)
         {
             var studentIDParameter = studentID.HasValue ?
                 new ObjectParameter("StudentID", studentID) :
                 new ObjectParameter("StudentID", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetStudentGrades_Result>("GetStudentGrades", studentIDParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<StudentGrade>("GetStudentGrades", studentIDParameter);
+        }
+    
+        public virtual ObjectResult<StudentGrade> GetStudentGrades(Nullable<int> studentID, MergeOption mergeOption)
+        {
+            var studentIDParameter = studentID.HasValue ?
+                new ObjectParameter("StudentID", studentID) :
+                new ObjectParameter("StudentID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<StudentGrade>("GetStudentGrades", mergeOption, studentIDParameter);
         }
     
         public virtual ObjectResult<Nullable<decimal>> InsertPerson(string lastName, string firstName, Nullable<System.DateTime> hireDate, Nullable<System.DateTime> enrollmentDate, string discriminator)
