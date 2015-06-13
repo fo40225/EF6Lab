@@ -19,6 +19,12 @@ namespace CodeFirst
             set;
         }
 
+        public string Url
+        {
+            get;
+            set;
+        }
+
         public virtual List<Post> Posts
         {
             get;
