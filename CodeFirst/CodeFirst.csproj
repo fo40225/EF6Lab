@@ -59,10 +59,15 @@
     <Compile Include="Migrations\201506131249247_AddUrl.Designer.cs">
       <DependentUpon>201506131249247_AddUrl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201506131251076_AddUser.cs" />
+    <Compile Include="Migrations\201506131251076_AddUser.Designer.cs">
+      <DependentUpon>201506131251076_AddUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Post.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -71,6 +76,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201506131249247_AddUrl.resx">
       <DependentUpon>201506131249247_AddUrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506131251076_AddUser.resx">
+      <DependentUpon>201506131251076_AddUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
