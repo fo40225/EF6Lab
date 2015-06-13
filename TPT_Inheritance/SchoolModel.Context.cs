@@ -26,7 +26,5 @@ namespace TPT_Inheritance
         }
     
         public virtual DbSet<Course> Courses { get; set; }
-        public virtual DbSet<OnlineCourse> OnlineCourses { get; set; }
-        public virtual DbSet<OnsiteCourse> OnsiteCourses { get; set; }
     }
 }

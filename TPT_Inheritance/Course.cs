@@ -18,8 +18,5 @@ namespace TPT_Inheritance
         public string Title { get; set; }
         public int Credits { get; set; }
         public int DepartmentID { get; set; }
-    
-        public virtual OnlineCourse OnlineCourse { get; set; }
-        public virtual OnsiteCourse OnsiteCourse { get; set; }
     }
 }
