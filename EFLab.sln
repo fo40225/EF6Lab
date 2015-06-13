@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPT_Inheritance", "TPT_Inhe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPH_Inheritance", "TPH_Inheritance\TPH_Inheritance.csproj", "{B72778C6-4DB1-4071-A83E-C44F23FB25F9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoredProcedures", "StoredProcedures\StoredProcedures.csproj", "{FD16758A-200E-47AC-A3E2-50D6E36635C0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{B72778C6-4DB1-4071-A83E-C44F23FB25F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B72778C6-4DB1-4071-A83E-C44F23FB25F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B72778C6-4DB1-4071-A83E-C44F23FB25F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD16758A-200E-47AC-A3E2-50D6E36635C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD16758A-200E-47AC-A3E2-50D6E36635C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD16758A-200E-47AC-A3E2-50D6E36635C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD16758A-200E-47AC-A3E2-50D6E36635C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
