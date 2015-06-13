@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TableSplitting", "TableSpli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqToEntities", "LinqToEntities\LinqToEntities.csproj", "{9CC0A198-C261-4468-B37B-65E9545F980E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loading", "Loading\Loading.csproj", "{F471F3F8-B58C-41E8-A3B6-27BB94ABD7FF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +79,10 @@ Global
 		{9CC0A198-C261-4468-B37B-65E9545F980E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9CC0A198-C261-4468-B37B-65E9545F980E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9CC0A198-C261-4468-B37B-65E9545F980E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F471F3F8-B58C-41E8-A3B6-27BB94ABD7FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F471F3F8-B58C-41E8-A3B6-27BB94ABD7FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F471F3F8-B58C-41E8-A3B6-27BB94ABD7FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F471F3F8-B58C-41E8-A3B6-27BB94ABD7FF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
